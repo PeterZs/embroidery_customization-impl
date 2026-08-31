@@ -87,8 +87,8 @@ Train an EmoLoRA from a single embroidery reference image:
 ```bash
 python src/emo_lora_trainer.py \
   --model_config configs/model_config.json \
-  --train_image assets/inputs/design_4.png \
-  --output_dir outputs/demo \
+  --train_image path/to/reference_embroidery_image.png \
+  --output_dir path/to/output_dir \
   --gpu_id 0
 ```
 
