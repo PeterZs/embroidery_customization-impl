@@ -53,6 +53,45 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Training
+
+#### Model Config
+
+Before training, edit `configs/model_config.json` and set the model paths for your machine. Most entries can be either a HuggingFace model id or a local directory path.
+
+```json
+{
+  "sdxl_path": "stabilityai/stable-diffusion-xl-base-1.0",
+  "vae_path": "madebyollin/sdxl-vae-fp16-fix",
+  "controlnet_canny_path": "xinsir/controlnet-canny-sdxl-1.0",
+  "controlnet_tile_path": "xinsir/controlnet-tile-sdxl-1.0",
+  "sd3_path": "stabilityai/stable-diffusion-3-medium-diffusers",
+  "sd3_controlnet_canny_path": "InstantX/SD3-Controlnet-Canny",
+  "sd3_controlnet_tile_path": "InstantX/SD3-Controlnet-Tile",
+  "wd14_models_dir": "/path/to/wd14",
+  "hed_model_dir": "lllyasviel/Annotators"
+}
+```
+
+You can also download these HuggingFace models locally and replace the corresponding values in `configs/model_config.json` with local paths.
+
+Additional model setup:
+
+- `wd14_models_dir`: download `SmilingWolf/wd-convnext-tagger-v3/model.onnx` and `SmilingWolf/wd-convnext-tagger-v3/selected_tags.csv`; rename them to `wd-convnext-tagger-v3.onnx` and `wd-convnext-tagger-v3.csv`, then place both files in the same `wd14` folder.
+- `hed_model_dir`: download `lllyasviel/Annotators/ControlNetHED.pth` and place it in an `Annotators` folder. The folder path should be used as `hed_model_dir`.
+
+#### Train
+
+Train an EmoLoRA from a single embroidery reference image:
+
+```bash
+python src/emo_lora_trainer.py \
+  --model_config configs/model_config.json \
+  --train_image assets/inputs/design_4.png \
+  --output_dir outputs/demo \
+  --gpu_id 0
+```
+
 ### Pretrained Model
 
 We release the pretrained EmoLoRA model on HuggingFace:

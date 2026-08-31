@@ -4,4 +4,10 @@ torchaudio==2.5.1
 diffusers==0.32.2
 transformers==4.46.3
 peft==0.12.0
+huggingface-hub==0.24.7
+datasets
 opencv-python-headless
+controlnet_aux==0.0.9
+onnxruntime==1.20.1
+datasets==3.1.0
+rembg==2.0.62

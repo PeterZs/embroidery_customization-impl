@@ -1,0 +1,11 @@
+{
+  "sdxl_path": "stabilityai/stable-diffusion-xl-base-1.0",
+  "vae_path": "madebyollin/sdxl-vae-fp16-fix",
+  "controlnet_canny_path": "xinsir/controlnet-canny-sdxl-1.0",
+  "controlnet_tile_path": "xinsir/controlnet-tile-sdxl-1.0",
+  "sd3_path": "stabilityai/stable-diffusion-3-medium-diffusers",
+  "sd3_controlnet_canny_path": "InstantX/SD3-Controlnet-Canny",
+  "sd3_controlnet_tile_path": "InstantX/SD3-Controlnet-Tile",
+  "wd14_models_dir": "/path/to/wd14",
+  "hed_model_dir": "lllyasviel/Annotators"
+}

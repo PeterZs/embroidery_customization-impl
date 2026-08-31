@@ -21,4 +21,8 @@ env/
 *.safetensors
 *.bin
 *.ckpt
+
+data/*
+wandb/*
 inference_test.ipynb
+configs/model_config_local.json
